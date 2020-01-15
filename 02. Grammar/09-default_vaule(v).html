@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+
+    console.log(0 && 1);
+    console.log(1 && 0);
+
+
+    // var originCash = 500;
+    // function updateEasyCard(cash){
+    //     var money = cash + originCash;
+    //     console.log(`我有${money}元`);
+        
+    // }
+    // updateEasyCard(100);
+
+    // =========函式預設值================
+    
+    var originCash =500;
+
+    function updateEasyCard(cash){
+      var cash = cash || 100;
+      var money = originCash + cash;
+      console.log(`我有${money}元`);
+      
+    }
+    updateEasyCard(0)//會有問題 會式為假值不用
+
+    // ==========輸入為0的解決方案 三元運算子==================
+
+
+    cash = (cash || cash ===0)? cash:500; //因為傳入0會被轉成false!!!
+
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

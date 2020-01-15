@@ -14,29 +14,36 @@
     // console.log(1 === 1);
     // console.log(1 !== '1');
     // // 嚴格相等
-    // console.log(NaN === NaN);
-    // console.log(+0 === -0);
+    // console.log(NaN === NaN); 這兩個例外
+    // console.log(+0 === -0); 這兩個例外
     
     // 寬鬆相等
     // console.log(1 == '1');
-    // 布林、字串轉為數值
+
+    // 布林、字串轉為"數值"
     // console.log(Number('1'));
     // console.log(2 == '2');
     // console.log(17 == '0x11'); // 16 + 1
     // console.log(Number(false));
+
+  console.log(true == 'true');//為false
+  // 左邊會轉為1 但右邊字串(太多國字)轉成數值會是NaN
+  
+  
     
-    // console.log(false == '0');
-    // console.log(true == 1);
-    // console.log(false == 0);
+    // console.log(false == '0'); true
+    // console.log(true == 1); true
+    // console.log(false == 0); true
     
-    // console.log(1 != '1');
-    // console.log(Number(!0));
-    // console.log('1' == !0);
+    // console.log(1 != '1'); false
+    console.log(!0);//true
+    console.log(Number(!0));//1
+    // console.log('1' == !0); true
     
     // Null、Undefined
     // console.log(Number(null), Number(undefined));
     // console.log(null == 0);
-    // console.log(null == undefined);
+    console.log(null == undefined);
     
     // 物件與非物件、使用包裹物件轉換
     // console.log(Number([10]));

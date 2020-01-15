@@ -16,7 +16,7 @@
     
     // var a = 1;
     // var b = 0;
-    // console.log(1 || 0);
+    // console.log(1 || 0);有值就回傳
     
     // var a = 1;
     // var b = 2;
@@ -25,18 +25,19 @@
     // console.log(c || c && c || a);
     // console.log(a && b || c && a);
     
+    // ===============考優先序的概念===================
     // var a = 1 + 1 === 1;
     // console.log(a);
     
     // console.log(1000 < 10000 < 10);
     
-    var a = '1';
+    var a = '1'; //比較會被轉成數字型別
     var b = 2;
     var c = (a > b) ? a * b : sum(a, b);
     function sum(a, b) {
       return a + b;
     }
-    console.log(c);
+    console.log(c);//12
     
 
   </script>

@@ -8,6 +8,7 @@
   <title>Document</title>
   <script>
     var person = '老媽'
+
     function sayHi() {
       console.log('hi ' + person);
     }
@@ -23,6 +24,10 @@
     }
     // sayHi();
     doMorningWork();  // 執行
+
+    // 1.先执行sayHi //老妈
+    // 2.doMorningWork +里面say hi  //虽然他再domorning的执行环境 但范围练出来一样式老妈
+
 
 
   </script>
