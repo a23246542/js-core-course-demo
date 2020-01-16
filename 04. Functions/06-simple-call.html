@@ -26,6 +26,7 @@
     //   // window
     // })();
 
+    // ===============simple直接調用=======================
     // function easyCard(base) {
     //   var money = base;
     //   var name = '悠遊卡';
@@ -36,7 +37,7 @@
     // }
     // var MingEasyCard = easyCard(100);
     // MingEasyCard(10);
-
+// ===================return callback也式=========================
     // callback
     // function myEasyCard(callback) {
     //   var money = 100
@@ -45,11 +46,14 @@
     // myEasyCard(function (money) {
     //   console.log(this.myName, money + 100)
     // });
-
+// ================================================
     // var a = [1, 2, 3];
     // a.forEach(function(i) {
     //   console.log(this.myName, i);
     // })
+// ==================陷阱題!!!================
+
+var family -{}
 
     var family = {
       myName: '小明家',
@@ -60,7 +64,7 @@
         }, 1000);
       }
     }
-    family.callName();
+    family.callName();//也式全域 真心鎮
 
   </script>
 </head>

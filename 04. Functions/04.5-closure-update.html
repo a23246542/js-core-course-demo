@@ -23,12 +23,47 @@
     //   return arr;
     // }
     // var fn = arrFunction();
-    // fn[0]();
-    // fn[1]();
-    // fn[2]();
+    // fn[0](); //3
+    // fn[1](); //3
+    // fn[2](); //3
+
+      // =================用立即函式閉包來處理或是let====================
+
+      function arrFunction(){
+        var arr =[];
+        for(var i = 0; i<3;i++){
+          (function(j){
+            arr.push(function(){console.log(j);})
+          })(i)
+        }
+        return arr;
+      }
+
+      var fn = arrFunction();
+      fn[0]();
+      fn[1]();
+      fn[2]();
+
+
 
     // 函式工廠
     // 私有方法
+      // ================函式工廠===================
+
+    function storeMoney1(initValue){
+      var money = initValue || 1000;
+      return function(price){
+        money = money + price;
+        return money; //!!!!
+      }
+    }
+
+    var MingMoney = storeMoney1(100);
+    console.log(MingMoney(500)); //沒return到 難怪沒東西 600
+    console.log(MingMoney(600)); //1200
+
+    // --------------私有方法-------------------
+
     function storeMoney(initValue) {
       var money = initValue || 1000;
       return {

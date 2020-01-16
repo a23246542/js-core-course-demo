@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    var person = '老媽'
+
+    function sayHi() {
+      console.log('hi ' + person);
+    }
+
+    function doMorningWork(){
+      person ="老爸";
+      sayHi();
+    }
+
+    doMorningWork()
+
+    // 1.先执行sayHi //老妈
+    // 2.doMorningWork +里面say hi  //虽然他再domorning的执行环境 但范围练出来一样式老妈
+
+
+
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
