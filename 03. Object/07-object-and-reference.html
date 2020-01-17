@@ -7,6 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <script>
+
+    // =============物件的參考特性================
     // var person = '小明';
     // var person2 = person;
     // person2 = '杰倫';
@@ -18,8 +20,11 @@
     // var person2 = person;
     // person2.name = '杰倫';
     // console.log(person, person2);
-    // console.log(person === person2);
+    console.log(person === person2);///!!!!會是false 內容相同 但參考記憶體不同了
 
+    // 這樣等於兩個物件的參考位址
+
+    // ===========================================
     // var family = {
     //   name: '小明家',
     //   members: {
@@ -29,9 +34,16 @@
     //   },
     // };
     // var member = family.members;
-    // member.ming = '大明'
+
+    // 1.這兩個不一樣
+    member={
+      ming:"大明"
+    }
+    // 2.修改屬性會影響到
+    member.ming = '大明'
     // console.log(member, family.members);
 
+    // =================================================
     // var a = { x: 1 };
     // a.y = a;
     // console.log(a);
@@ -40,11 +52,11 @@
     var b = a;
     a.y = a = { x: 2 };
     // 1. a = { x: 2 } 是一個運算式
-    // 2. a.y = a = { x: 2 } 同時執行的
-    // a.y 找的是原本的參考路徑
-    console.log(a.y);
-    console.log(b);
-    console.log(a === b.y);
+    // 2. a.y = a = { x: 2 } 練續賦值是同時執行的
+    // 所以a.y 找的是原本的參考路徑
+    console.log(a.y);//undefined
+    console.log(b);//{x:1,y:{..}}
+    console.log(a === b.y);//會是true!!!!!!!
     
   </script>
 </head>

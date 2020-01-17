@@ -7,12 +7,22 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <script>
+
+    // =============方法1================
+    var family1={
+      name:'小明家',
+      ming:{}
+    }
+
+    family.ming.name="小明";//1
+
+    // ==============方法2==不確定物件結構的情況下=============
     var family = {
       name: '小明家',
       // ming: {}
     };
     
-    family.ming = {
+    family.ming = { //2
       name: '小明'
     }
     

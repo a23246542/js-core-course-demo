@@ -9,30 +9,30 @@
   <script>
     
     // 函式包含哪些變數
-    // var globalVariable = '全域變數';
-    // var obj = {
-    //   aFunction: function(para) {
-    //     var localVariables = '區域變數';
-    //     console.log(para, localVariables, arguments, this, globalVariable);
-    //     // 包含傳入的參數
-    //   }
-    // }
+    var globalVariable = '全域變數';
+    var obj = {
+      aFunction: function(para) {
+        var localVariables = '區域變數';
+        console.log(para, localVariables, arguments, this, globalVariable);
+        // 包含傳入的參數
+      }
+    }
 
-    // obj.aFunction('一段描述', 2, 3);
-
-    // function callName(a) {
-    //   function a() {}
-    //   console.log(a);
+    obj.aFunction('一段描述', 2, 3);
+// ===============================================
+    function callName(a) {
+      console.log(a);//印出function
+      function a() {}//這個a會被提升 取代成這個 
       
       
-    //   var a;
-    //   console.log(a);
-    //   a = '杰倫';
-    //   console.log(a);
+      var a;
+      console.log(a);
+      a = '杰倫';
+      console.log(a);
       
-    // }
-    // callName('小明')
-
+    }
+    callName('小明')
+// ========================================
     // function callMore(d, c, b, a) {
     //   console.log(d, c, b, a);
     // }
@@ -40,7 +40,7 @@
     // var b = 'b';
     // var c = 'c';
     // callMore(a, b, c);
-
+// =========================================
     // function callObject(obj) {
     //   obj.name = '杰倫家';
     // }
@@ -49,8 +49,22 @@
     // }
     // callObject(family);
     // console.log(family);
+// =======================================
 
-    // callback function
+
+// callback function
+// 1.原本寫的 裡面直接放函式
+function functionB(fn){
+  fn('小明');
+}
+
+functionB(function(a){
+  console.log(a);
+  
+})
+
+// 2.老師改寫 裡面放函數名字
+
     // function callSomeone(name, a) {
     //   console.log(name + '你好', a)
     // }
@@ -59,12 +73,26 @@
     // }
     // functionB(callSomeone)
 
+  function functionMing(fn){
+    fn('小明');
+  }
+
+  function hiSomeone(name){
+    console.log(name+'你好');
+    
+  }
+  functionMing(hiSomeone);
+
+
+// ==============================================
     function callArg(a) {
       console.log(a, arguments);
 
-      arguments.forEach(function() {
+      arguments.forEach(function() { //用不了這方法
         
       })
+
+      //但基本的迴圈可以用
       // for (let index = 0; index < arguments.length; index++) {
       //   console.log(arguments[index]);
         

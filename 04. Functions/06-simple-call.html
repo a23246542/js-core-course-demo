@@ -53,8 +53,15 @@
     // })
 // ==================陷阱題!!!================
 
-var family -{}
-
+    var family ={
+      myName:'小名家',
+      callName:function(){
+        setTimeout(function(){
+          console.log(myName);//會是全域 真心鎮大冒險
+        }, 1000);
+      }
+    }
+// -----------------解法-------------------
     var family = {
       myName: '小明家',
       callName: function () {
@@ -64,7 +71,7 @@ var family -{}
         }, 1000);
       }
     }
-    family.callName();//也式全域 真心鎮
+    family.callName();//小明家
 
   </script>
 </head>
