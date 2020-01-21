@@ -56,6 +56,30 @@
       }
     }
     person.getData();
+
+    // =================================================
+
+    const arr = [15, 12, 63, 67, 1421, 124, 567, 235, 12, 45];
+
+    var arrDouble = arr.map(num=>num*2);
+    console.log(arrDouble);
+    
+
+// ---------------
+
+   const average = function () {
+      const nums = Array.from(arguments);
+      const total = nums.reduce(function(acc,item){
+        return acc + item
+      },0)
+      return total/nums.length;
+  }
+
+  // const average = (...nums) => nums.reduce( (acc,item)=>{},0);
+
+  const average = (..nums)=>{ const total =}
+
+
   </script>
 </body>
 

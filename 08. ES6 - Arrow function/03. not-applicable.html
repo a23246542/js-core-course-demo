@@ -12,16 +12,16 @@
 <body>
   <script>
     // 常見錯誤
-
+// 1---------------
     // const arrFn = ()=> ({data: 1});
     // console.log(arrFn())
-
+// 2------------------ 邏輯運算子
     // let num = 0;
 
     // const numFn = num || function () { return 1 };
-    // const numFn = num || (() => 1);
-    // console.log(numFn());
-
+    // const numFn = num || (() => 1);//
+    // console.log(numFn()); //
+// 3-------------------沒有this
     // const person = {
     //   myName: '小明',
     //   callName: function () {
@@ -29,7 +29,7 @@
     //   },
     // }
     // person.callName();
-
+// -------------------------例如vue案例 物件this案例就不行
     // const app = new Vue({
     //   data: {
     //     num: 1
@@ -38,7 +38,7 @@
     //     console.log(this.num)
     //   }
     // })
-
+// -----------------------------圓形練案例
     const Fn2 = function (a) {
       this.name = a;
     }
@@ -49,6 +49,14 @@
     const newObj = new Fn2('函式');
     console.log(newObj.protoFn());
     
+    // ==================================
+
+    // 1  小括號 (參數)=>(直接代表回傳值)
+    const arrFn = () => ({data:1})
+
+    // 2. 大括號 (參數)=>{函數內部城市}
+
+
   </script>
 </body>
 

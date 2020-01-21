@@ -8,16 +8,16 @@
   <title>Document</title>
   <script>
     
-    var myName = '真心鎮大冒險';
+    // var myName = '真心鎮大冒險';
 
-    var family = {
-      myName: '小明家',
-    }
+    // var family = {
+    //   myName: '小明家',
+    // }
 
-    function fn(para1, para2) {
-      console.log(this, typeof this, para1, para2);
-    }
-
+    // function fn(para1, para2) {
+    //   console.log(this, typeof this, para1, para2);
+    // }
+// ===================================================
     // call, apply, bind
     // fn(1, 2);
     // fn.call(family, 1, 2);
@@ -26,7 +26,7 @@
 
     // var fn2 = fn.bind(family, '小明');
     // fn2(1);
-
+//  --------------------------------------------------
     // 進階觀念
     // fn.call(1, '小明', '杰倫');
     // fn.call('文字', '小明', '杰倫');
@@ -38,16 +38,41 @@
     //   a = '小明';
       
     // })();
+// ---------------------------------------------------------
+    // function callStrict(para1, para2) {
+    //   'use strict';
+    //   console.log(this, typeof this, para1, para2);
+    // }
+    // callStrict.call(1, '小明', '杰倫');
+    // callStrict.call(undefined, '小明', '杰倫');
 
-    function callStrict(para1, para2) {
-      'use strict';
-      console.log(this, typeof this, para1, para2);
-    }
-    callStrict.call(1, '小明', '杰倫');
-    callStrict.call(undefined, '小明', '杰倫');
-
-    callStrict('小明', '杰倫');
+    // callStrict('小明', '杰倫');
     // 簡易呼叫的 this 盡可能不要調用，它的本質其實是 undefined
+
+    // ===========練習====================================
+
+    var family = {
+      myName:"小明家",
+    }
+
+    function fn(par1,par2){
+      console.log(this,par1,par2,this.myName);
+    }
+
+    fn.call(family,1,2);
+    fn.apply(family,[3,4]);
+
+    fn.bind(family,"小明");
+    fn(5); //this會變window 因為是複製過去 原本函數沒指定到
+
+    var fn2 = fn.bind(family,"小明");
+    fn2(5);
+
+    // --------
+
+    (function(){
+        'use strict'
+    })()
 
 
   </script>
