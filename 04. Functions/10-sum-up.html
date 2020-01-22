@@ -10,7 +10,7 @@
 
     var myName = '全域';
 
-    // // This 的觀念
+    // ===============This 的觀念
     // var person = {
     //   myName: '小明',
     //   getName: function () {
@@ -20,8 +20,8 @@
     // var getName = person.getName;
     // console.log(getName());
     // // 這個值為？
-
-    // bind 的其餘參數
+// ------------------------------------------
+    // =============bind 的其餘參數
     // var obj = {
     //   myName: '奇怪的函式',
     //   fn: function (a, b, c) {
@@ -38,9 +38,9 @@
     // null,0,1,2
     // 奇怪的函式,1,2,undefined
 
-    // null,0,1,2 > 這個結果該如何修改程式碼
-
-    // This 的觀念
+    // null,0,1,2 > 這個結果該如何修改程式碼 use strict
+// -----------------------------------------------------
+    // ===============This 的觀念
     // var value = 'global';
     // var foo = {
     //   value: 'local',
@@ -60,10 +60,10 @@
     // // 直接執行
     // console.log(foo.bar()); // local
     // // 賦值
-    // console.log((b.a = foo.bar)());
+    // console.log((b.a = foo.bar)());//表達是會回傳一個結果 結果是一樣的
     // // or
     // console.log((false || foo.bar)());
-
+// ------------------------------------------------
     var arr = ['10', '2', '11'].map(function(item, i) {
       return parseInt(item, i); // 3, 2
     });
@@ -77,6 +77,11 @@
     // [1, NaN, NaN]
     // [1, undefined, undefined]
 
+    // ==========================================
+
+    var arr = ['1','2','3'].map(function(item,i){
+      return 
+    })
     
   </script>
 </head>

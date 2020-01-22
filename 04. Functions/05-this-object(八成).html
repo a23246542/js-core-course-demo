@@ -14,7 +14,7 @@
       console.log(this, this.myName);
     }
     // callName();
-
+// -----------------------------------
     // var family = {
     //   myName: '小明家',
     //   callName: callName
@@ -23,22 +23,25 @@
 
     // -------------------------------
 
-    // var family2 = {
-    //   myName: '杰倫家',
-    //   callName: callName
-    // }
-    // family2.callName();
+    var family2 = {
+      myName: '杰倫家',
+      callName: callName
+    }
+    family2.callName();//object 杰倫家
 
-    // var family = {
-    //   myName: '小明家',
-    //   callName: callName,
-    //   Ming: {
-    //     myName: '小明',
-    //     callName: callName
-    //   }
-    // }
-    // family.callName();
-    // family.Ming.callName();
+    // -------------------------------
+    var family = {
+      myName: '小明家',
+      callName: callName,
+      Ming: {
+        myName: '小明',
+        callName: callName
+      }
+    }
+    family.callName(); //我 小明家
+    family.Ming.callName(); //  我 小明
+    // ------------------------------
+
 
     var family = {
       myName: '小明家',
@@ -47,9 +50,13 @@
       }
     }
     family.callName();//family.小明家
-
+    // !!!!!!!
     var callName = family.callName;
     callName(); // 直接用=Simple Call 會是window跟 真心鎮大冒險
+
+    // ===============練習=============================
+
+    
 
   </script>
 </head>

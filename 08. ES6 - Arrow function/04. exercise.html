@@ -58,7 +58,7 @@
     person.getData();
 
     // =================================================
-
+    // 1.
     const arr = [15, 12, 63, 67, 1421, 124, 567, 235, 12, 45];
 
     var arrDouble = arr.map(num=>num*2);
@@ -66,18 +66,46 @@
     
 
 // ---------------
-
-   const average = function () {
-      const nums = Array.from(arguments);
-      const total = nums.reduce(function(acc,item){
-        return acc + item
-      },0)
-      return total/nums.length;
-  }
-
+//  2.
+  //  const average = function () {
+  //     const nums = Array.from(arguments);
+  //     const total = nums.reduce(function(acc,item){
+  //       return acc + item
+  //     },0)
+  //     return total/nums.length;
+  // }
+//  3.
   // const average = (...nums) => nums.reduce( (acc,item)=>{},0);
 
-  const average = (..nums)=>{ const total =}
+  // const average = (..nums)=>{ const total =}
+
+  // const average = (...nums)=>(nums.reduce((acc,item)=>(acc+item),0)/nums.length);
+  // const average = (...num) => num.reduce((acc, val) => acc + val, 0) / num.length;
+  const average = (...nums)=>nums.reduce((acc,item)=>acc+item,0)/nums.length;
+
+
+  console.log( average(1,2,3,4,5,10));
+  
+  // 4.
+
+  const person ={
+    data:{
+
+    },
+    getData:function(){
+      $.ajax({
+        url:'https://randomuser.me/api/',
+        dataType:'json',
+        success:(data) => {
+          console.log(data);
+          this.data = data.results[0];
+          console.log(person.data);
+        }
+      })
+    }
+  }
+
+  
 
 
   </script>
