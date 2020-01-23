@@ -53,12 +53,13 @@
     a.y = a = { x: 2 };
     // 1. a = { x: 2 } 是一個運算式
     // 2. a.y = a = { x: 2 } 練續賦值是同時執行的
-    // 所以a.y 找的是原本的參考路徑
+    // 所以a.y 找的是原本的參考路徑 這時候a.b還相連著
+    // console.log(b.y);//{x:2}
+
     console.log(a.y);//undefined
-    console.log(b);//{x:1,y:{..}}
+    console.log(b);//{x:1,y:{x:2}}
     console.log(a === b.y);//會是true!!!!!!!
 
-    console.log(b.y);
     
     
   </script>

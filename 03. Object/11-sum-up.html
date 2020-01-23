@@ -64,33 +64,34 @@
 
     var a = { x: 1 };
     var b = a;
-    a.y = a = { x: 2 };
+    a.y = a = { x: 2 };//? 有點搞混是運算子回傳 還是回傳a
     // 1. a = { x: 2 } 是一個運算式
     // 2. a.y = a = { x: 2 } 練續賦值是同時執行的
     // 所以a.y 找的是原本的參考路徑 這時候a.b還相連著
     // console.log(b.y);//{x:2}
-
     console.log(a.y);//undefined
+
+    console.log(a);//{x:2}
     console.log(b);//{x:1,y:{x:2}}
-    console.log(a === b.y);//會是true!!!!!!!
+    console.log(a === b.y);//會是true!!!!!!! 都是{x:2}
 // --------
 
     var a ={};
     var b=a;
     var c = b = {number:1};
-    console.log(c===b);//true!!!!!!
+    console.log(c===b);//true!!!!!! 這時候c取道的已經是{nimber}
     c.name='小明';
     console.log(a);//空物件 
     console.log(c);//空物件+name
-    console.log(a===c);//不等於
+    console.log(a===c);//false
 
     // -----------------
     var a ={x:1}
-    var b = a ={y:2}
+    var b = a ={y:2}//同時的話 b取道的是{x:1} 還是{y:2}
     console.log(a.y);
-    console.log(b);
+    console.log(b);//{y:2} 為什麼不是{x:1}
     b.y =3
-    console.log(b===a);//是true!!
+    console.log(b===a);//是true!! 位址相同
     
     
 
