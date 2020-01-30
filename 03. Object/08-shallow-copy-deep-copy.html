@@ -8,7 +8,9 @@
   <title>Document</title>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script>
-    var family = {
+
+// ==============================================
+var family = {
       name: '小明家',
       members: {
         father: '老爸',
@@ -17,31 +19,32 @@
       },
     }
 
-    // var newFamily = {};
-    // for (var key in family) {
-    //   // console.log(key, family[key]);
-    //   newFamily[key] = family[key];
-    // }
-    // newFamily.name = '杰倫家';
-    // console.log(family === newFamily)
-    // newFamily.members.ming = '大明';
-    // console.log(family, newFamily);
-    // // 淺層複製、shallow copy
-
+    var newFamily = {};
+    for (var key in family) {
+      // console.log(key, family[key]);
+      newFamily[key] = family[key];
+    }
+    newFamily.name = '杰倫家';
+    console.log(family === newFamily)//false
+    newFamily.members.ming = '大明';
+    console.log(family, newFamily); //第二層還是被改了
+    // 淺層複製、shallow copy
+// ================2.其他物件淺複製方法(不然傳址很麻煩)============================
     // // jQuery
     // var newFamily2 = jQuery.extend({}, family);
 
     // // ES6
     // var newFamily3 = Object.assign({}, family);
-
-    // 深層複製、deep copy
+// ==================================================
+    // 深層複製、deep copy  轉成字串再轉回物件
     console.log(family, JSON.parse(JSON.stringify(family)));
     var newFamily4 = JSON.parse(JSON.stringify(family));
     newFamily4.name = '杰倫家';
     newFamily4.members.ming = '大明';
     console.log(family, newFamily4);
     
-    
+    // ================練習===================
+
   </script>
 </head>
 

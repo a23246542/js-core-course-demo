@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+
+    // =============1物件的參考特性 講跟純值的傳參考不同================
+    var person = '小明'; //純值 淺複製
+    var person2 = person;
+    person2 = '杰倫';
+    console.log(person, person2);
+
+    var person = {
+      name: '小明'
+    }
+    var person2 = person;
+    person2.name = '杰倫';
+    console.log(person, person2);
+    console.log(person === person2);//true
+   
+
+    // ==============2 {}會建立新的記憶體空間=======================
+    var family = {
+      name: '小明家',
+      members: {
+        father: '老爸',
+        mom: '老媽',
+        ming: '小明'
+      },
+    };
+    var member = family.members;
+
+    // 1.如果是用大括號 就式重新指派
+    member={ 
+      ming:"大明"
+    }
+    //2.但如果註解掉上面 用屬性的方式這個就會是同個物件
+    member.ming = '大明'
+    console.log(member, family.members);//兩個member已經不一樣了
+
+    // ==============3.傳參考回一值重複參考到自己=================================
+    // var a = { x: 1 };
+    // a.y = a;   //a是物件
+    // console.log(a); //{x:1,y:{..}}
+
+    // =====================================================
+    var a = { x: 1 };
+    var b = a;
+    a.y = a = { x: 2 };
+    // 1. a = { x: 2 } 是一個運算式
+    // 2. a.y = a = { x: 2 } 練續賦值是同時執行的
+    // 所以a.y 找的是原本的參考路徑 這時候a.b還相連著
+    // console.log(b.y);//{x:2}
+
+    console.log(a.y);//undefined
+    console.log(b);//{x:1,y:{x:2}}
+    console.log(a === b.y);//會是true!!!!!!!
+
+    
+    
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -51,11 +51,13 @@
       }
     }
     //問題1 changeName 會不會讓原本的family修改道呢 傳紙應該會吧
+    // 淺複製只有一層??
     var family2 = jQuery.extend({}, changeName(family));//說是淺複製
     family2.members.jay = '杰倫';
 
-    console.log('family.name', family.name) //我猜小明家 => 杰倫加 粗心
-    console.log('family.members.jay', family.members.jay);//我猜undefined =>有被插入杰倫
+    console.log('family.name', family.name) //我猜小明家 => 結果杰倫家 粗心 函數船物件參考 會改到原本
+    console.log('family.members.jay', family.members.jay);//我猜undefined =>結果有被插入杰倫
+    // --
     console.log(family === family2);//我猜false 老師說沒有關連性
     console.log(family.members === family2.members);//我猜錯 =>true 老師說兩者內容是相容的(所以就true?)
     console.log(family, family2);
